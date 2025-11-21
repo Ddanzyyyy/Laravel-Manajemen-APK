@@ -49,6 +49,9 @@ Route::middleware('checkLogin')->group(function () {
         Route::delete('tugas/destroy/{id}', [TugasController::class, 'destroy'])->name('tugasDestroy');
         Route::get('tugas/excel', [TugasController::class, 'excel'])->name('tugasExcel');
 
+        // Penempatan
+        Route::resource('penempatan', \App\Http\Controllers\PenempatanController::class);
+
     });
 });
 

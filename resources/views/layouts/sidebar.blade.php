@@ -42,6 +42,13 @@
                 <span>Data Tugas</span>
             </a>
         </li>
+        <!-- Nav Item - Penempatan -->
+        <li class="nav-item {{ $menuAdminPenempatan ?? ''}}">
+            <a class="nav-link" href="{{ route('penempatan.index') }}">
+                <i class="fas fa-fw fa-map-marker-alt"></i>
+                <span>Data Penempatan</span>
+            </a>
+        </li>
     @else
         <!-- Heading -->
         <div class="sidebar-heading">
@@ -53,6 +60,12 @@
             <a class="nav-link" href="{{ route('tugas') }}">
                 <i class="fas fa-fw fa-tasks"></i>
                 <span>Data Tugas</span></a>
+        </li>
+        <!-- Nav Item - Penempatan -->
+        <li class="nav-item {{ $menuKaryawanPenempatan ?? ''}}">
+            <a class="nav-link" href="{{ route('penempatan.index') }}">
+                <i class="fas fa-fw fa-map-marker-alt"></i>
+                <span>Data Penempatan</span></a>
         </li>
     @endif
     <!-- Divider -->

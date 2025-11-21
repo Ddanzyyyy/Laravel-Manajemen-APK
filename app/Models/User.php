@@ -39,6 +39,17 @@ class User extends Authenticatable
         return $this->hasOne(Tugas::class);
     }
 
+    public function penempatan()
+    {
+        return $this->hasOne(Penempatan::class);
+    }
+
+    // Scope untuk user yang statusnya ditugaskan
+    public function scopeDitugaskan($query)
+    {
+        return $query->where('is_tugas', 1);
+    }
+
     /**
      * Get the attributes that should be cast.
      *
