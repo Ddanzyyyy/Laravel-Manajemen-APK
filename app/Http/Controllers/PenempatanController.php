@@ -13,8 +13,14 @@ class PenempatanController extends Controller
     public function index()
     {
         $penempatans = Penempatan::with('user')->get();
+        $users = \App\Models\User::ditugaskan()
+            ->whereNotNull('nama')
+            ->where('nama', '!=', '')
+            ->whereNotNull('Jabatan')
+            ->where('Jabatan', '!=', '')
+            ->get();
         $title = 'Data Penempatan';
-        return view('penempatan.index', compact('penempatans', 'title'));
+        return view('penempatan.index', compact('penempatans', 'users', 'title'));
     }
 
     public function create()

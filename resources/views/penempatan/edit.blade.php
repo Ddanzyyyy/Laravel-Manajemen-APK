@@ -13,7 +13,7 @@
                     <select name="user_id" id="user_id" class="form-control" required>
                         <option value="">-- Pilih Pegawai --</option>
                         @foreach($users as $user)
-                            <option value="{{ $user->id }}" {{ $penempatan->user_id == $user->id ? 'selected' : '' }}>{{ $user->name }} ({{ $user->jabatan }})</option>
+                            <option value="{{ $user->id }}" {{ $penempatan->user_id == $user->id ? 'selected' : '' }}>{{ $user->nama }} ({{ $user->Jabatan }})</option>
                         @endforeach
                     </select>
                 </div>

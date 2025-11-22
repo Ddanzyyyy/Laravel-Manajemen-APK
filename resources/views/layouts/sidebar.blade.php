@@ -43,10 +43,10 @@
             </a>
         </li>
         <!-- Nav Item - Penempatan -->
-        <li class="nav-item {{ $menuAdminPenempatan ?? ''}}">
+        <li class="nav-item {{ (request()->routeIs('penempatan.*') ? 'active' : ($menuAdminPenempatan ?? '')) }}">
             <a class="nav-link" href="{{ route('penempatan.index') }}">
                 <i class="fas fa-fw fa-map-marker-alt"></i>
-                <span>Data Penempatan</span>
+                <span @if(request()->routeIs('penempatan.*')) style="font-weight:bold;" @endif>Data Penempatan</span>
             </a>
         </li>
     @else
@@ -62,10 +62,10 @@
                 <span>Data Tugas</span></a>
         </li>
         <!-- Nav Item - Penempatan -->
-        <li class="nav-item {{ $menuKaryawanPenempatan ?? ''}}">
+        <li class="nav-item {{ (request()->routeIs('penempatan.*') ? 'active' : ($menuKaryawanPenempatan ?? '')) }}">
             <a class="nav-link" href="{{ route('penempatan.index') }}">
                 <i class="fas fa-fw fa-map-marker-alt"></i>
-                <span>Data Penempatan</span></a>
+                <span @if(request()->routeIs('penempatan.*')) style="font-weight:bold;" @endif>Data Penempatan</span></a>
         </li>
     @endif
     <!-- Divider -->
